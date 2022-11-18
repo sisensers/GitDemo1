@@ -1,0 +1,58 @@
+{
+    "title": "KPI Dashboard - Git",
+    "desc": "",
+    "style": {
+        "name": "vivid",
+        "palette": {
+            "_id": "5c8a8ff4a6d2b31ba0e61d31",
+            "colors": [
+                "#ffcb05",
+                "#92c0c0",
+                "#ef888a",
+                "#afca65",
+                "#b596b7",
+                "#b8b8b8",
+                "#d8d8d8",
+                "#f4bbaa",
+                "#bbe3c9",
+                "#d8c1da",
+                "#ecdec3",
+                "#c6b694",
+                "#E2AC55"
+            ],
+            "name": "Pastel Rainbow",
+            "isDefault": false,
+            "sortOrder": 10
+        }
+    },
+    "layout": "./layout.json",
+    "oid": "63779a6c77532a0038372d8b",
+    "allowChangeSubscription": false,
+    "dataExploration": true,
+    "datasource": {
+        "fullname": "localhost/sisenseDemo",
+        "id": "localhost_asisenseDemo",
+        "address": "LocalHost",
+        "database": "asisenseDemo",
+        "live": false,
+        "title": "sisenseDemo"
+    },
+    "filters": "./filters.json",
+    "parentFolder": "63777f4277532a0038372cf7",
+    "settings": {
+        "autoUpdateOnFiltersChange": true
+    },
+    "widgets": [
+        "./widgets/63779a6c77532a0038372d8c/widget.json",
+        "./widgets/63779a6c77532a0038372d8d/widget.json",
+        "./widgets/63779a6c77532a0038372d8e/widget.json",
+        "./widgets/63779a6c77532a0038372d8f/widget.json",
+        "./widgets/63779a6c77532a0038372d90/widget.json",
+        "./widgets/63779a6c77532a0038372d91/widget.json",
+        "./widgets/63779a6c77532a0038372d92/widget.json",
+        "./widgets/63779a6c77532a0038372d93/widget.json",
+        "./widgets/63779a6c77532a0038372d94/widget.json",
+        "./widgets/63779a6c77532a0038372d95/widget.json"
+    ],
+    "hierarchies": []
+}

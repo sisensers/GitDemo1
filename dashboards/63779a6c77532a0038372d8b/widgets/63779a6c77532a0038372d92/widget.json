@@ -1,0 +1,249 @@
+{
+    "title": "",
+    "type": "BloX",
+    "subtype": "BloX",
+    "oid": "63779a6c77532a0038372d92",
+    "desc": null,
+    "datasource": {
+        "fullname": "localhost/sisenseDemo",
+        "id": "localhost_asisenseDemo",
+        "address": "LocalHost",
+        "database": "asisenseDemo",
+        "live": false,
+        "title": "sisenseDemo"
+    },
+    "metadata": {
+        "ignore": {
+            "dimensions": [],
+            "all": false,
+            "ids": []
+        },
+        "panels": [
+            {
+                "name": "Items",
+                "items": []
+            },
+            {
+                "name": "Values",
+                "items": []
+            },
+            {
+                "name": "filters",
+                "items": []
+            }
+        ]
+    },
+    "style": {
+        "currentCard": {
+            "style": "",
+            "titleStyle": [
+                {
+                    "display": "none"
+                }
+            ],
+            "script": "",
+            "title": "",
+            "showCarousel": true,
+            "body": [
+                {
+                    "type": "Container",
+                    "style": {
+                        "background-color": "#60c2bb"
+                    },
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "K️e️y️ ️M️e️t️r️i️c️s️ ️D️a️s️h️b️o️a️r️d️",
+                            "style": {
+                                "text-align": "center",
+                                "font-weight": "bold",
+                                "font-size": "28px",
+                                "margin": "10px",
+                                "color": "#fff"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "actions": []
+        },
+        "currentConfig": {
+            "fontFamily": "Open Sans",
+            "fontSizes": {
+                "default": 14,
+                "small": 16,
+                "medium": 20,
+                "large": 50,
+                "extraLarge": 32
+            },
+            "fontWeights": {
+                "default": 500,
+                "light": 100,
+                "bold": 1000
+            },
+            "containerStyles": {
+                "default": {
+                    "backgroundColor": "#ffcb05",
+                    "foregroundColors": {
+                        "default": {
+                            "normal": "#000000"
+                        },
+                        "white": {
+                            "normal": "#ffffff"
+                        },
+                        "grey": {
+                            "normal": "#5C6372"
+                        },
+                        "orange": {
+                            "normal": "#f2B900"
+                        },
+                        "yellow": {
+                            "normal": "#ffcb05"
+                        },
+                        "black": {
+                            "normal": "#000000"
+                        },
+                        "lightGreen": {
+                            "normal": "#3ADCCA"
+                        },
+                        "green": {
+                            "normal": "#54a254"
+                        },
+                        "red": {
+                            "normal": "#dd1111"
+                        },
+                        "accent": {
+                            "normal": "#2E89FC"
+                        },
+                        "good": {
+                            "normal": "#54a254"
+                        },
+                        "warning": {
+                            "normal": "#e69500"
+                        },
+                        "attention": {
+                            "normal": "#cc3300"
+                        }
+                    }
+                }
+            },
+            "imageSizes": {
+                "default": 40,
+                "small": 40,
+                "medium": 80,
+                "large": 160
+            },
+            "imageSet": {
+                "imageSize": "medium",
+                "maxImageHeight": 100
+            },
+            "actions": {
+                "color": "",
+                "backgroundColor": "white",
+                "maxActions": 5,
+                "spacing": "extraLarge",
+                "buttonSpacing": 20,
+                "actionsOrientation": "horizontal",
+                "actionAlignment": "center",
+                "showCard": {
+                    "actionMode": "inline",
+                    "inlineTopMargin": 16,
+                    "style": "default"
+                }
+            },
+            "spacing": {
+                "default": 5,
+                "small": 20,
+                "medium": 60,
+                "large": 20,
+                "extraLarge": 40,
+                "padding": 0
+            },
+            "separator": {
+                "lineThickness": 1,
+                "lineColor": "#eeeeee"
+            },
+            "factSet": {
+                "title": {
+                    "size": "default",
+                    "color": "default",
+                    "weight": "bold",
+                    "warp": true
+                },
+                "value": {
+                    "size": "default",
+                    "color": "default",
+                    "weight": "default",
+                    "warp": true
+                },
+                "spacing": 20
+            },
+            "supportsInteractivity": true,
+            "imageBaseUrl": ""
+        },
+        "currentCardName": "default",
+        "narration": {
+            "enabled": false,
+            "display": "above",
+            "format": "bullets",
+            "verbosity": "medium",
+            "up_sentiment": "good",
+            "aggregation": "sum",
+            "labels": []
+        }
+    },
+    "instanceid": "3F7CA-E95E-19",
+    "wasRendered": false,
+    "questQueryResult": {
+        "isActive": false,
+        "isPending": false
+    },
+    "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": false,
+        "displayToolbarRow": false,
+        "displayHeaderRow": false,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "drillToDashboardByName": false
+    },
+    "drilledDashboardDisplay": {},
+    "element": {},
+    "realTimeRefreshing": false,
+    "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "autoUpdateOnEveryChange": true
+    },
+    "dashboardid": "63779a6c77532a0038372d8b",
+    "lastOpened": null,
+    "_dataSourcePermission": "owner",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    }
+}

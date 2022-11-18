@@ -1,0 +1,550 @@
+{
+    "title": "Sales Rep Performance MoM",
+    "type": "chart/bar",
+    "subtype": "bar/classic",
+    "oid": "63779a6c77532a0038372d8c",
+    "desc": null,
+    "datasource": {
+        "fullname": "localhost/sisenseDemo",
+        "id": "localhost_asisenseDemo",
+        "address": "LocalHost",
+        "database": "asisenseDemo",
+        "live": false,
+        "title": "sisenseDemo"
+    },
+    "metadata": {
+        "drillHistory": [
+            {
+                "jaql": {
+                    "table": "dbo.SalesEmp",
+                    "column": "Region",
+                    "dim": "[dbo.SalesEmp.Region]",
+                    "datatype": "text",
+                    "merged": true,
+                    "title": "Region"
+                },
+                "parent": {
+                    "jaql": {
+                        "table": "dbo.SalesEmp",
+                        "column": "Rep Name",
+                        "dim": "[dbo.SalesEmp.Rep Name]",
+                        "datatype": "text",
+                        "merged": true,
+                        "title": "Rep Name"
+                    }
+                },
+                "through": {
+                    "jaql": {
+                        "datatype": "text",
+                        "dim": "[dbo.SalesEmp.Rep Name]",
+                        "title": "Rep Name",
+                        "column": "Rep Name",
+                        "table": "dbo.SalesEmp",
+                        "filter": {
+                            "explicit": true,
+                            "multiSelection": true,
+                            "members": [
+                                "John Bean"
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "jaql": {
+                    "table": "dbo.ProductCatalog",
+                    "column": "Name",
+                    "dim": "[dbo.ProductCatalog.Name]",
+                    "datatype": "text",
+                    "merged": true,
+                    "title": "Name"
+                },
+                "parent": {
+                    "jaql": {
+                        "table": "dbo.SalesEmp",
+                        "column": "Rep Name",
+                        "dim": "[dbo.SalesEmp.Rep Name]",
+                        "datatype": "text",
+                        "merged": true,
+                        "title": "Rep Name"
+                    }
+                },
+                "through": {
+                    "jaql": {
+                        "datatype": "text",
+                        "dim": "[dbo.SalesEmp.Rep Name]",
+                        "title": "Rep Name",
+                        "column": "Rep Name",
+                        "table": "dbo.SalesEmp",
+                        "filter": {
+                            "explicit": true,
+                            "multiSelection": true,
+                            "members": [
+                                "John Bean"
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "jaql": {
+                    "table": "dbo.SalesEmp",
+                    "column": "Country",
+                    "dim": "[dbo.SalesEmp.Country]",
+                    "datatype": "text",
+                    "merged": true,
+                    "title": "Country"
+                },
+                "parent": {
+                    "jaql": {
+                        "table": "dbo.SalesEmp",
+                        "column": "Rep Name",
+                        "dim": "[dbo.SalesEmp.Rep Name]",
+                        "datatype": "text",
+                        "merged": true,
+                        "title": "Rep Name"
+                    }
+                },
+                "through": {
+                    "jaql": {
+                        "datatype": "text",
+                        "dim": "[dbo.SalesEmp.Rep Name]",
+                        "title": "Rep Name",
+                        "column": "Rep Name",
+                        "table": "dbo.SalesEmp",
+                        "filter": {
+                            "explicit": true,
+                            "multiSelection": true,
+                            "members": [
+                                "John Bean"
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "ignore": {
+            "dimensions": [],
+            "all": false,
+            "ids": []
+        },
+        "panels": [
+            {
+                "name": "categories",
+                "items": [
+                    {
+                        "jaql": {
+                            "table": "SALESEMP",
+                            "column": "REP NAME",
+                            "dim": "[SALESEMP.REP NAME]",
+                            "datatype": "text",
+                            "title": "REP NAME"
+                        },
+                        "instanceid": "D8136-00EF-55"
+                    }
+                ]
+            },
+            {
+                "name": "values",
+                "items": [
+                    {
+                        "jaql": {
+                            "type": "measure",
+                            "formula": "GrowthPastMonth([12E3D-C43])",
+                            "context": {
+                                "[12E3D-C43]": {
+                                    "type": "measure",
+                                    "formula": "sum([41E2D-780]*[4CB01-0FB])",
+                                    "context": {
+                                        "[4CB01-0FB]": {
+                                            "table": "PRODUCTCATALOG",
+                                            "column": "UNITPRICE",
+                                            "dim": "[PRODUCTCATALOG.UNITPRICE]",
+                                            "datatype": "numeric",
+                                            "title": "UNITPRICE"
+                                        },
+                                        "[41E2D-780]": {
+                                            "table": "ORDERLINE",
+                                            "column": "ITEMSSOLD",
+                                            "dim": "[ORDERLINE.ITEMSSOLD]",
+                                            "datatype": "numeric",
+                                            "title": "ITEMSSOLD"
+                                        }
+                                    },
+                                    "title": "Gross Sales"
+                                }
+                            },
+                            "title": "MoM Growth",
+                            "sort": "desc"
+                        },
+                        "format": {
+                            "mask": {
+                                "type": "percent",
+                                "separated": true,
+                                "decimals": "1",
+                                "isdefault": true
+                            },
+                            "color": {
+                                "steps": 0,
+                                "min": "#fa7240",
+                                "max": "#4d9b96",
+                                "minvalue": null,
+                                "midvalue": null,
+                                "maxvalue": null,
+                                "minValueValid": true,
+                                "midValueValid": true,
+                                "maxValueValid": true,
+                                "type": "range",
+                                "rangeMode": "both"
+                            }
+                        },
+                        "field": {
+                            "id": "sum([1834D-70D]*[41572-F78])",
+                            "index": 1
+                        },
+                        "originalJaql": {
+                            "type": "measure",
+                            "formula": "sum([010D6-515]*[AB1E2-789])",
+                            "context": {
+                                "[010D6-515]": {
+                                    "table": "dbo.orderline",
+                                    "column": "ItemsSold",
+                                    "dim": "[dbo.orderline.ItemsSold]",
+                                    "datatype": "numeric",
+                                    "title": "ItemsSold"
+                                },
+                                "[AB1E2-789]": {
+                                    "table": "dbo.ProductCatalog",
+                                    "column": "UnitPrice",
+                                    "dim": "[dbo.ProductCatalog.UnitPrice]",
+                                    "datatype": "numeric",
+                                    "title": "UnitPrice"
+                                }
+                            },
+                            "title": "Gross Sales",
+                            "sort": "desc"
+                        },
+                        "quickFunction": "GrowthPastMonth",
+                        "instanceid": "28863-279C-25"
+                    }
+                ]
+            },
+            {
+                "name": "break by",
+                "items": []
+            },
+            {
+                "name": "filters",
+                "items": [
+                    {
+                        "jaql": {
+                            "table": "Orders",
+                            "column": "OrderDate",
+                            "dim": "[Orders.OrderDate (Calendar)]",
+                            "datatype": "datetime",
+                            "merged": true,
+                            "title": "OrderDate",
+                            "level": "months",
+                            "filter": {
+                                "last": {
+                                    "count": 1,
+                                    "offset": 1
+                                }
+                            },
+                            "collapsed": true,
+                            "datasource": {
+                                "fullname": "localhost/sisenseDemo",
+                                "id": "localhost_asisenseDemo",
+                                "address": "LocalHost",
+                                "database": "asisenseDemo",
+                                "live": false,
+                                "title": "sisenseDemo"
+                            }
+                        },
+                        "format": {
+                            "mask": {
+                                "years": "yyyy",
+                                "quarters": "yyyy Q",
+                                "months": "MM/yyyy",
+                                "weeks": "ww yyyy",
+                                "days": "shortDate",
+                                "minutes": "HH:mm",
+                                "isdefault": true
+                            }
+                        },
+                        "instanceid": "AA551-A83E-B4"
+                    }
+                ]
+            }
+        ]
+    },
+    "dashboardid": "63779a6c77532a0038372d8b",
+    "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": false,
+        "displayToolbarRow": false,
+        "displayHeaderRow": false,
+        "volatile": true,
+        "hideDrilledDashboards": false,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": true,
+        "sameCubeRestriction": false,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+    },
+    "instanceid": "4958D-8B82-4F",
+    "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "maxCharsPerLabelXAxis": 31,
+        "selectorLocked": false,
+        "previousScrollerLocation": {
+            "min": null,
+            "max": null
+        },
+        "aiFeatures": [
+            {
+                "id": "percentile_curves_1574252861643",
+                "name": "Percentile Curves",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Another way to show distributions",
+                "isCustomModel": true
+            },
+            {
+                "id": "summary_statistics_1569425202576",
+                "name": "Summary Statistics",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Provide information about your data",
+                "isCustomModel": true
+            },
+            {
+                "id": "pareto_1569481451806",
+                "name": "Pareto",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Roughly 80% of the effects come from 20% of the causes",
+                "isCustomModel": true
+            },
+            {
+                "id": "two-tailed_test_1574241584650",
+                "name": "Two-Tailed Test",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "perform two tailed t-test",
+                "isCustomModel": true
+            },
+            {
+                "id": "cluster_1570673124179",
+                "name": "Clustering",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Grouping a set of objects in such a way that objects in the same group are more similar to each other than to those in other groups",
+                "isCustomModel": true
+            },
+            {
+                "id": "growth_rate_1572222323562",
+                "name": "Growth Rates",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "refer to the percentage change of a specific variable within a specific time period and given a certain context",
+                "isCustomModel": true
+            },
+            {
+                "id": "anomaly",
+                "name": "Anomaly",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Outlier data points detections",
+                "isCustomModel": false
+            },
+            {
+                "id": "forecast",
+                "name": "What-If Analysis",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {
+                    "hasTargetVar": true,
+                    "targetVar": {
+                        "targetVarPaneActive": false,
+                        "sectionTitle": "Target Value",
+                        "options": [
+                            "MoM Growth"
+                        ],
+                        "value": "MoM Growth"
+                    }
+                },
+                "description": "Predict the future values of a 2-var-TS, one of which is the target and the\n                    second is explaining variable.\n                    Provide non-symmetric confidence-interval for the above predictions.\n                    Var-Dependence (Score) - the strength of the influence of the explaining\n                    variable on the target one.\n                    XAI (model weights etc)",
+                "isCustomModel": false
+            },
+            {
+                "id": "local_estimates",
+                "name": "Local Estimate",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Locally (using before and after time series points) estimating the mean of the time series",
+                "isCustomModel": false
+            },
+            {
+                "id": "trend",
+                "name": "Trend",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Detect (if exists) Trend-Break-Points and connect those with a trend line",
+                "isCustomModel": false
+            }
+        ]
+    },
+    "queryStartTime": "2022-03-02T14:02:58",
+    "realTimeRefreshing": false,
+    "style": {
+        "legend": {
+            "enabled": false,
+            "position": "bottom"
+        },
+        "seriesLabels": {
+            "enabled": false,
+            "rotation": 0,
+            "labels": {
+                "enabled": false,
+                "types": {
+                    "count": false,
+                    "percentage": false,
+                    "relative": false,
+                    "totals": false
+                },
+                "stacked": false,
+                "stackedPercentage": false
+            }
+        },
+        "xAxis": {
+            "enabled": true,
+            "ticks": true,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "title": {
+                "enabled": false
+            },
+            "x2Title": {
+                "enabled": false
+            },
+            "gridLines": true,
+            "isIntervalEnabled": false
+        },
+        "yAxis": {
+            "inactive": false,
+            "enabled": true,
+            "ticks": true,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "title": {
+                "enabled": false
+            },
+            "gridLines": true,
+            "logarithmic": false,
+            "isIntervalEnabled": true,
+            "hideMinMax": false
+        },
+        "y2Axis": {
+            "inactive": true,
+            "enabled": true,
+            "ticks": true,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "title": {
+                "enabled": false
+            },
+            "gridLines": false,
+            "logarithmic": false,
+            "isIntervalEnabled": true,
+            "hideMinMax": false
+        },
+        "dataLimits": {
+            "seriesCapacity": 50,
+            "categoriesCapacity": 100000
+        },
+        "navigator": {
+            "enabled": true
+        },
+        "narration": {
+            "enabled": false,
+            "display": "above",
+            "format": "bullets",
+            "verbosity": "medium",
+            "up_sentiment": "good",
+            "aggregation": "sum",
+            "labels": [
+                {
+                    "id": "rep_name",
+                    "title": "REP NAME",
+                    "singular": "REP NAME",
+                    "plural": "REP NAME"
+                },
+                {
+                    "id": "months",
+                    "title": "months",
+                    "singular": "months",
+                    "plural": "months"
+                }
+            ]
+        }
+    },
+    "wasRendered": false,
+    "continuousDates": false,
+    "nullAsZero": false,
+    "hasExcessiveSeries": false,
+    "lastOpened": null,
+    "_dataSourcePermission": "owner",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    }
+}

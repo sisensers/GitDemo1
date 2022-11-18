@@ -1,0 +1,612 @@
+{
+    "title": "Gross Sales by Product Type",
+    "type": "chart/pie",
+    "subtype": "pie/ring",
+    "oid": "63779a6c77532a0038372d8d",
+    "desc": null,
+    "datasource": {
+        "fullname": "localhost/sisenseDemo",
+        "id": "localhost_asisenseDemo",
+        "address": "LocalHost",
+        "database": "asisenseDemo",
+        "live": false,
+        "title": "sisenseDemo"
+    },
+    "metadata": {
+        "drillHistory": [
+            {
+                "jaql": {
+                    "table": "dbo.SalesEmp",
+                    "column": "City",
+                    "dim": "[dbo.SalesEmp.City]",
+                    "datatype": "text",
+                    "merged": true,
+                    "title": "City"
+                },
+                "parent": {
+                    "jaql": {
+                        "table": "PRODUCTCATALOG",
+                        "column": "NAME",
+                        "dim": "[PRODUCTCATALOG.NAME]",
+                        "datatype": "text",
+                        "title": "NAME"
+                    },
+                    "format": {
+                        "members": {
+                            "Entry Level Firewall": {
+                                "color": "#ffcb05",
+                                "title": "Entry Level Firewall",
+                                "sortData": "Entry Level Firewall",
+                                "inResultset": true
+                            },
+                            "High-End Firewall": {
+                                "color": "#92c0c0",
+                                "title": "High-End Firewall",
+                                "sortData": "High-End Firewall",
+                                "inResultset": true
+                            },
+                            "Mid Range Firewall": {
+                                "color": "#ef888a",
+                                "title": "Mid Range Firewall",
+                                "sortData": "Mid Range Firewall",
+                                "inResultset": true
+                            },
+                            "WAN Acceleration": {
+                                "color": "#afca65",
+                                "title": "WAN Acceleration",
+                                "sortData": "WAN Acceleration",
+                                "inResultset": true
+                            },
+                            "Wireless Security": {
+                                "color": "#b596b7",
+                                "title": "Wireless Security",
+                                "sortData": "Wireless Security",
+                                "inResultset": true
+                            }
+                        }
+                    }
+                },
+                "through": {
+                    "jaql": {
+                        "datatype": "text",
+                        "dim": "[PRODUCTCATALOG.NAME]",
+                        "title": "NAME",
+                        "column": "NAME",
+                        "table": "PRODUCTCATALOG",
+                        "filter": {
+                            "explicit": true,
+                            "multiSelection": true,
+                            "members": [
+                                "Entry Level Firewall"
+                            ]
+                        }
+                    }
+                },
+                "format": {
+                    "members": {
+                        "Los Angeles": {
+                            "color": "#ffcb05",
+                            "title": "Los Angeles",
+                            "sortData": "Los Angeles",
+                            "inResultset": true
+                        },
+                        "New York City": {
+                            "color": "#92c0c0",
+                            "title": "New York City",
+                            "sortData": "New York City",
+                            "inResultset": true
+                        },
+                        "Philadelphia": {
+                            "color": "#ef888a",
+                            "title": "Philadelphia",
+                            "sortData": "Philadelphia",
+                            "inResultset": true
+                        },
+                        "San Francisco": {
+                            "color": "#afca65",
+                            "title": "San Francisco",
+                            "sortData": "San Francisco",
+                            "inResultset": true
+                        }
+                    }
+                }
+            },
+            {
+                "jaql": {
+                    "table": "Orders",
+                    "column": "OrderDate",
+                    "dim": "[Orders.OrderDate (Calendar)]",
+                    "datatype": "datetime",
+                    "merged": true,
+                    "level": "months",
+                    "title": "Months in OrderDate"
+                },
+                "parent": {
+                    "jaql": {
+                        "table": "dbo.SalesEmp",
+                        "column": "City",
+                        "dim": "[dbo.SalesEmp.City]",
+                        "datatype": "text",
+                        "merged": true,
+                        "title": "City"
+                    },
+                    "parent": {
+                        "jaql": {
+                            "table": "dbo.ProductCatalog",
+                            "column": "Name",
+                            "dim": "[dbo.ProductCatalog.Name]",
+                            "datatype": "text",
+                            "merged": true,
+                            "title": "Product Name"
+                        },
+                        "format": {
+                            "members": {
+                                "Entry Level Firewall": {
+                                    "color": "#ffcb05",
+                                    "title": "Entry Level Firewall",
+                                    "sortData": "Entry Level Firewall",
+                                    "inResultset": true
+                                },
+                                "High-End Firewall": {
+                                    "color": "#92c0c0",
+                                    "title": "High-End Firewall",
+                                    "sortData": "High-End Firewall",
+                                    "inResultset": true
+                                },
+                                "Mid Range Firewall": {
+                                    "color": "#ef888a",
+                                    "title": "Mid Range Firewall",
+                                    "sortData": "Mid Range Firewall",
+                                    "inResultset": true
+                                },
+                                "WAN Acceleration": {
+                                    "color": "#afca65",
+                                    "title": "WAN Acceleration",
+                                    "sortData": "WAN Acceleration",
+                                    "inResultset": true
+                                },
+                                "Wireless Security": {
+                                    "color": "#b596b7",
+                                    "title": "Wireless Security",
+                                    "sortData": "Wireless Security",
+                                    "inResultset": true
+                                }
+                            }
+                        },
+                        "activeHierarchy": {
+                            "_id": "59d39976a558112318351394",
+                            "title": "Name"
+                        }
+                    },
+                    "through": {
+                        "jaql": {
+                            "datatype": "text",
+                            "dim": "[dbo.ProductCatalog.Name]",
+                            "title": "Product Name",
+                            "column": "Name",
+                            "table": "dbo.ProductCatalog",
+                            "filter": {
+                                "explicit": true,
+                                "multiSelection": true,
+                                "members": [
+                                    "Entry Level Firewall"
+                                ]
+                            }
+                        }
+                    },
+                    "activeHierarchy": {
+                        "_id": "59d39976a558112318351394",
+                        "title": "Name"
+                    },
+                    "format": {
+                        "members": {
+                            "Los Angeles": {
+                                "color": "#ffcb05",
+                                "title": "Los Angeles",
+                                "sortData": "Los Angeles",
+                                "inResultset": true
+                            },
+                            "New York City": {
+                                "color": "#92c0c0",
+                                "title": "New York City",
+                                "sortData": "New York City",
+                                "inResultset": true
+                            },
+                            "Philadelphia": {
+                                "color": "#ef888a",
+                                "title": "Philadelphia",
+                                "sortData": "Philadelphia",
+                                "inResultset": true
+                            },
+                            "San Francisco": {
+                                "color": "#afca65",
+                                "title": "San Francisco",
+                                "sortData": "San Francisco",
+                                "inResultset": true
+                            }
+                        }
+                    }
+                },
+                "through": {
+                    "jaql": {
+                        "datatype": "text",
+                        "dim": "[dbo.SalesEmp.City]",
+                        "title": "City",
+                        "column": "City",
+                        "table": "dbo.SalesEmp",
+                        "filter": {
+                            "explicit": true,
+                            "multiSelection": true,
+                            "members": [
+                                "Philadelphia"
+                            ]
+                        }
+                    }
+                },
+                "activeHierarchy": {
+                    "_id": "59d39976a558112318351394",
+                    "title": "Name"
+                },
+                "format": {
+                    "mask": {
+                        "years": "yyyy",
+                        "quarters": "yyyy Q",
+                        "months": "MM/yyyy",
+                        "weeks": "ww yyyy",
+                        "days": "shortDate",
+                        "minutes": "HH:mm",
+                        "isdefault": true
+                    },
+                    "members": {
+                        "07/2019": {
+                            "color": "#ffcb05",
+                            "title": "07/2019",
+                            "sortData": "2019-07-01T00:00:00"
+                        },
+                        "08/2019": {
+                            "color": "#92c0c0",
+                            "title": "08/2019",
+                            "sortData": "2019-08-01T00:00:00"
+                        },
+                        "09/2019": {
+                            "color": "#ef888a",
+                            "title": "09/2019",
+                            "sortData": "2019-09-01T00:00:00"
+                        },
+                        "10/2019": {
+                            "color": "#afca65",
+                            "title": "10/2019",
+                            "sortData": "2019-10-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "11/2019": {
+                            "color": "#b596b7",
+                            "title": "11/2019",
+                            "sortData": "2019-11-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "12/2019": {
+                            "color": "#b8b8b8",
+                            "title": "12/2019",
+                            "sortData": "2019-12-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "01/2020": {
+                            "color": "#d8d8d8",
+                            "title": "01/2020",
+                            "sortData": "2020-01-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "02/2020": {
+                            "color": "#f4bbaa",
+                            "title": "02/2020",
+                            "sortData": "2020-02-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "03/2020": {
+                            "color": "#bbe3c9",
+                            "title": "03/2020",
+                            "sortData": "2020-03-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "04/2020": {
+                            "color": "#d8c1da",
+                            "title": "04/2020",
+                            "sortData": "2020-04-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "05/2020": {
+                            "color": "#ecdec3",
+                            "title": "05/2020",
+                            "sortData": "2020-05-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "06/2020": {
+                            "color": "#c6b694",
+                            "title": "06/2020",
+                            "sortData": "2020-06-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "07/2020": {
+                            "color": "#E2AC55",
+                            "title": "07/2020",
+                            "sortData": "2020-07-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "08/2020": {
+                            "color": "#ffd01c",
+                            "title": "08/2020",
+                            "sortData": "2020-08-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "09/2020": {
+                            "color": "#a8dddd",
+                            "title": "09/2020",
+                            "sortData": "2020-09-01T00:00:00",
+                            "inResultset": true
+                        },
+                        "10/2020": {
+                            "color": "#ff9d9f",
+                            "title": "10/2020",
+                            "sortData": "2020-10-01T00:00:00",
+                            "inResultset": true
+                        }
+                    }
+                }
+            }
+        ],
+        "ignore": {
+            "dimensions": [],
+            "all": false,
+            "ids": []
+        },
+        "panels": [
+            {
+                "name": "categories",
+                "items": [
+                    {
+                        "jaql": {
+                            "table": "PRODUCTCATALOG",
+                            "column": "NAME",
+                            "dim": "[PRODUCTCATALOG.NAME]",
+                            "datatype": "text",
+                            "title": "NAME"
+                        },
+                        "format": {
+                            "members": {
+                                "Entry Level Firewall": {
+                                    "color": "#ffcb05",
+                                    "title": "Entry Level Firewall",
+                                    "sortData": "Entry Level Firewall",
+                                    "inResultset": true
+                                },
+                                "High-End Firewall": {
+                                    "color": "#92c0c0",
+                                    "title": "High-End Firewall",
+                                    "sortData": "High-End Firewall",
+                                    "inResultset": true
+                                },
+                                "Mid Range Firewall": {
+                                    "color": "#ef888a",
+                                    "title": "Mid Range Firewall",
+                                    "sortData": "Mid Range Firewall",
+                                    "inResultset": true
+                                },
+                                "WAN Acceleration": {
+                                    "color": "#afca65",
+                                    "title": "WAN Acceleration",
+                                    "sortData": "WAN Acceleration",
+                                    "inResultset": true
+                                },
+                                "Wireless Security": {
+                                    "color": "#b596b7",
+                                    "title": "Wireless Security",
+                                    "sortData": "Wireless Security",
+                                    "inResultset": true
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "values",
+                "items": [
+                    {
+                        "jaql": {
+                            "type": "measure",
+                            "formula": "sum([2CB65-2A4]*[F75D9-A24])",
+                            "context": {
+                                "[F75D9-A24]": {
+                                    "table": "PRODUCTCATALOG",
+                                    "column": "UNITPRICE",
+                                    "dim": "[PRODUCTCATALOG.UNITPRICE]",
+                                    "datatype": "numeric",
+                                    "title": "UNITPRICE"
+                                },
+                                "[2CB65-2A4]": {
+                                    "table": "ORDERLINE",
+                                    "column": "ITEMSSOLD",
+                                    "dim": "[ORDERLINE.ITEMSSOLD]",
+                                    "datatype": "numeric",
+                                    "title": "ITEMSSOLD"
+                                }
+                            },
+                            "title": "Gross Sales"
+                        },
+                        "format": {
+                            "mask": {
+                                "type": "number",
+                                "abbreviations": {
+                                    "t": true,
+                                    "b": true,
+                                    "m": true,
+                                    "k": true
+                                },
+                                "separated": true,
+                                "decimals": "auto",
+                                "isdefault": true
+                            },
+                            "color_bkp": {
+                                "color": "#ffcb05",
+                                "type": "color"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "filters",
+                "items": []
+            }
+        ]
+    },
+    "dashboardid": "63779a6c77532a0038372d8b",
+    "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": false,
+        "displayToolbarRow": false,
+        "displayHeaderRow": false,
+        "volatile": true,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": true,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+    },
+    "instanceid": "55431-58F9-7D",
+    "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "selectorLocked": false
+    },
+    "queryStartTime": "2021-02-15T21:57:19",
+    "realTimeRefreshing": false,
+    "style": {
+        "legend": {
+            "enabled": true,
+            "position": "right"
+        },
+        "labels": {
+            "enabled": true,
+            "categories": false,
+            "value": false,
+            "percent": true,
+            "decimals": false,
+            "fontFamily": "Open Sans",
+            "color": "red"
+        },
+        "dataLimits": {
+            "seriesCapacity": 100000
+        },
+        "seriesLabels": {
+            "enabled": false,
+            "rotation": 0
+        },
+        "xAxis": {
+            "enabled": true,
+            "ticks": true,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "title": {
+                "enabled": false
+            },
+            "x2Title": {
+                "enabled": false
+            },
+            "gridLines": true,
+            "isIntervalEnabled": true
+        },
+        "yAxis": {
+            "inactive": false,
+            "enabled": true,
+            "ticks": true,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "title": {
+                "enabled": false
+            },
+            "gridLines": true,
+            "logarithmic": false,
+            "hideMinMax": false,
+            "isIntervalEnabled": true
+        },
+        "y2Axis": {
+            "inactive": true,
+            "enabled": true,
+            "ticks": true,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "title": {
+                "enabled": false
+            },
+            "gridLines": false,
+            "logarithmic": false,
+            "hideMinMax": false,
+            "isIntervalEnabled": true
+        },
+        "navigator": {
+            "enabled": true
+        },
+        "narration": {
+            "enabled": false,
+            "display": "below",
+            "format": "bullets",
+            "verbosity": "medium",
+            "up_sentiment": "good",
+            "aggregation": "sum",
+            "labels": [
+                {
+                    "id": "name",
+                    "title": "NAME",
+                    "singular": "NAME",
+                    "plural": "NAME"
+                }
+            ]
+        },
+        "convolution": {
+            "enabled": true,
+            "selectedConvolutionType": "byPercentage",
+            "minimalIndependentSlicePercentage": 3,
+            "independentSlicesCount": 7
+        }
+    },
+    "continuousDates": false,
+    "nullAsZero": false,
+    "wasRendered": false,
+    "lastOpened": null,
+    "_dataSourcePermission": "owner",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    }
+}

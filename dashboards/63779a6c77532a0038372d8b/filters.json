@@ -1,0 +1,58 @@
+{
+    "filters": [
+        {
+            "jaql": {
+                "datatype": "text",
+                "dim": "[PRODUCTCATALOG.NAME]",
+                "title": "NAME",
+                "column": "NAME",
+                "table": "PRODUCTCATALOG",
+                "datasource": {
+                    "fullname": "localhost/sisenseDemo",
+                    "id": "localhost_asisenseDemo",
+                    "address": "LocalHost",
+                    "database": "asisenseDemo",
+                    "live": false,
+                    "title": "sisenseDemo"
+                },
+                "collapsed": true,
+                "isDashboardFilter": true,
+                "filter": {
+                    "explicit": false,
+                    "multiSelection": true,
+                    "all": true
+                }
+            },
+            "instanceid": "A1F71-BCB4-71",
+            "isCascading": false,
+            "disabled": false
+        },
+        {
+            "jaql": {
+                "datatype": "text",
+                "dim": "[SALESEMP.REP NAME]",
+                "title": "REP NAME",
+                "column": "REP NAME",
+                "table": "SALESEMP",
+                "datasource": {
+                    "fullname": "localhost/sisenseDemo",
+                    "id": "localhost_asisenseDemo",
+                    "address": "LocalHost",
+                    "database": "asisenseDemo",
+                    "live": false,
+                    "title": "sisenseDemo"
+                },
+                "collapsed": true,
+                "isDashboardFilter": true,
+                "filter": {
+                    "explicit": false,
+                    "multiSelection": true,
+                    "all": true
+                }
+            },
+            "instanceid": "CBF12-9422-58",
+            "isCascading": false,
+            "disabled": false
+        }
+    ]
+}

@@ -1,0 +1,365 @@
+{
+    "title": "Growth by Rep & Product Type",
+    "type": "pivot2",
+    "subtype": "pivot",
+    "oid": "63779a6c77532a0038372d94",
+    "desc": null,
+    "datasource": {
+        "fullname": "localhost/sisenseDemo",
+        "id": "localhost_asisenseDemo",
+        "address": "LocalHost",
+        "database": "asisenseDemo",
+        "live": false,
+        "title": "sisenseDemo"
+    },
+    "metadata": {
+        "drillHistory": [
+            {
+                "jaql": {
+                    "table": "dbo.orderline",
+                    "column": "Discount",
+                    "dim": "[dbo.orderline.Discount]",
+                    "datatype": "numeric",
+                    "title": "Discount1"
+                },
+                "parent": {
+                    "jaql": {
+                        "table": "dbo.SalesEmp",
+                        "column": "Rep Name",
+                        "dim": "[dbo.SalesEmp.Rep Name]",
+                        "datatype": "text",
+                        "merged": true,
+                        "title": "Rep Name"
+                    },
+                    "field": {
+                        "id": "[dbo.SalesEmp.Rep Name]",
+                        "index": 0
+                    },
+                    "format": {
+                        "width": 138
+                    }
+                },
+                "through": {
+                    "jaql": {
+                        "datatype": "text",
+                        "dim": "[dbo.SalesEmp.Rep Name]",
+                        "title": "Rep Name",
+                        "column": "Rep Name",
+                        "table": "dbo.SalesEmp",
+                        "filter": {
+                            "explicit": true,
+                            "multiSelection": true,
+                            "members": [
+                                "Jane Smith"
+                            ]
+                        }
+                    }
+                },
+                "field": {
+                    "id": "[dbo.orderline.Discount]",
+                    "index": 0
+                }
+            }
+        ],
+        "ignore": {
+            "dimensions": [],
+            "all": true,
+            "ids": []
+        },
+        "panels": [
+            {
+                "name": "rows",
+                "items": [
+                    {
+                        "jaql": {
+                            "table": "SALESEMP",
+                            "column": "REP NAME",
+                            "dim": "[SALESEMP.REP NAME]",
+                            "datatype": "text",
+                            "title": "REP NAME"
+                        },
+                        "panel": "rows",
+                        "field": {
+                            "id": "[SALESEMP.REP NAME]",
+                            "index": 0
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "values",
+                "items": [
+                    {
+                        "jaql": {
+                            "type": "measure",
+                            "formula": "Growth([29D19-21C])",
+                            "context": {
+                                "[29D19-21C]": {
+                                    "type": "measure",
+                                    "formula": "sum([41E2D-780]*[4CB01-0FB])",
+                                    "context": {
+                                        "[4CB01-0FB]": {
+                                            "table": "PRODUCTCATALOG",
+                                            "column": "UNITPRICE",
+                                            "dim": "[PRODUCTCATALOG.UNITPRICE]",
+                                            "datatype": "numeric",
+                                            "title": "UNITPRICE"
+                                        },
+                                        "[41E2D-780]": {
+                                            "table": "ORDERLINE",
+                                            "column": "ITEMSSOLD",
+                                            "dim": "[ORDERLINE.ITEMSSOLD]",
+                                            "datatype": "numeric",
+                                            "title": "ITEMSSOLD"
+                                        }
+                                    },
+                                    "title": "Gross Sales"
+                                }
+                            },
+                            "title": "Growth of Items Sold",
+                            "datatype": "numeric"
+                        },
+                        "field": {
+                            "id": "Growth([80546-AA6])",
+                            "index": 2
+                        },
+                        "format": {
+                            "mask": {
+                                "abbreviations": {
+                                    "t": false,
+                                    "b": false,
+                                    "m": false,
+                                    "k": false
+                                },
+                                "decimals": "auto",
+                                "currency": {
+                                    "symbol": "$",
+                                    "position": "pre"
+                                },
+                                "type": "percent"
+                            },
+                            "color": {
+                                "type": "condition",
+                                "conditions": [
+                                    {
+                                        "color": "#ffb5b7",
+                                        "operator": "<",
+                                        "expression": "-0.25"
+                                    },
+                                    {
+                                        "color": "#edfff3",
+                                        "operator": "≥",
+                                        "expression": "0.3"
+                                    }
+                                ]
+                            },
+                            "databars": false
+                        },
+                        "originalJaql": {
+                            "type": "measure",
+                            "formula": "[B8F06-D5D]",
+                            "context": {
+                                "[60D4E-121]": {
+                                    "table": "dbo.orderline",
+                                    "column": "ItemsSold",
+                                    "dim": "[dbo.orderline.ItemsSold]",
+                                    "datatype": "numeric",
+                                    "agg": "sum",
+                                    "title": "Total ItemsSold"
+                                },
+                                "[B8F06-D5D]": {
+                                    "type": "measure",
+                                    "formula": "sum([1CAF0-5B9]*[B2F92-985])",
+                                    "context": {
+                                        "[1CAF0-5B9]": {
+                                            "table": "dbo.orderline",
+                                            "column": "ItemsSold",
+                                            "dim": "[dbo.orderline.ItemsSold]",
+                                            "datatype": "numeric",
+                                            "title": "ItemsSold"
+                                        },
+                                        "[B2F92-985]": {
+                                            "table": "dbo.ProductCatalog",
+                                            "column": "UnitPrice",
+                                            "dim": "[dbo.ProductCatalog.UnitPrice]",
+                                            "datatype": "numeric",
+                                            "title": "UnitPrice"
+                                        }
+                                    },
+                                    "title": "Gross Sales"
+                                }
+                            },
+                            "title": "Items Sold"
+                        },
+                        "quickFunction": "Growth",
+                        "panel": "measures"
+                    }
+                ]
+            },
+            {
+                "name": "columns",
+                "items": [
+                    {
+                        "jaql": {
+                            "table": "PRODUCTCATALOG",
+                            "column": "NAME",
+                            "dim": "[PRODUCTCATALOG.NAME]",
+                            "datatype": "text",
+                            "title": "NAME"
+                        },
+                        "panel": "columns",
+                        "field": {
+                            "id": "[PRODUCTCATALOG.NAME]",
+                            "index": 1
+                        },
+                        "format": {
+                            "width": 112
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "filters",
+                "items": [
+                    {
+                        "jaql": {
+                            "table": "Orders",
+                            "column": "OrderDate",
+                            "dim": "[Orders.OrderDate (Calendar)]",
+                            "datatype": "datetime",
+                            "merged": true,
+                            "title": "OrderDate",
+                            "level": "months",
+                            "filter": {
+                                "last": {
+                                    "count": 1,
+                                    "offset": 1
+                                }
+                            },
+                            "collapsed": true,
+                            "datasource": {
+                                "fullname": "localhost/sisenseDemo",
+                                "id": "localhost_asisenseDemo",
+                                "address": "LocalHost",
+                                "database": "asisenseDemo",
+                                "live": false,
+                                "title": "sisenseDemo"
+                            }
+                        },
+                        "format": {
+                            "mask": {
+                                "years": "yyyy",
+                                "quarters": "yyyy Q",
+                                "months": "MM/yyyy",
+                                "weeks": "ww yyyy",
+                                "days": "shortDate",
+                                "minutes": "HH:mm",
+                                "isdefault": true
+                            }
+                        },
+                        "panel": "scope"
+                    }
+                ]
+            }
+        ]
+    },
+    "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 2,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+    },
+    "drilledDashboardDisplay": {},
+    "instanceid": "ED29B-52DC-AE",
+    "queryStartTime": "2021-02-15T20:45:08",
+    "realTimeRefreshing": false,
+    "script": "./script.js",
+    "style": {
+        "pageSize": 25,
+        "automaticHeight": false,
+        "colors": {
+            "rows": false,
+            "columns": false,
+            "headers": true,
+            "members": true,
+            "totals": true
+        },
+        "narration": {
+            "enabled": false,
+            "display": "above",
+            "format": "bullets",
+            "verbosity": "medium",
+            "up_sentiment": "good",
+            "aggregation": "sum",
+            "labels": [
+                {
+                    "id": "rep_name",
+                    "title": "REP NAME",
+                    "singular": "REP NAME",
+                    "plural": "REP NAME"
+                },
+                {
+                    "id": "name",
+                    "title": "NAME",
+                    "singular": "NAME",
+                    "plural": "NAME"
+                },
+                {
+                    "id": "months",
+                    "title": "months",
+                    "singular": "months",
+                    "plural": "months"
+                }
+            ]
+        },
+        "rowsGrandTotal": true,
+        "scroll": false
+    },
+    "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "triggersDomready": true,
+        "drillToAnywhere": false,
+        "autoUpdateOnEveryChange": true,
+        "selectorLocked": false,
+        "interactivePivot": {
+            "enable": false
+        },
+        "imageColumns": []
+    },
+    "dashboardid": "63779a6c77532a0038372d8b",
+    "wasRendered": false,
+    "script_old": "/*\nWelcome to your Widget's Script.\n\nTo learn how you can access the Widget and Dashboard objects, see the online documentation at https://developer.sisense.com/pages/viewpage.action?pageId=557127\n*/\n",
+    "lastOpened": null,
+    "_dataSourcePermission": "owner",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    }
+}
